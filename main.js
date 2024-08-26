@@ -81,10 +81,15 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
+export const greeter = (name, time) => {
   //your code here
-  
-};
+  if(time < 0) return "Invalid time";
+  if(time >= 0 && time <= 5) return "Good night " + name;
+  if(time >= 6 && time <= 11) return "Good morning " + name;
+  if(time >= 12 && time <= 17) return "Good day " + name;
+  if(time >= 18 && time <= 23) return "Good evening " + name;
+  if(time > 23) return "Invalid time" 
+}
 
 /******************************************************************************
 4.
@@ -100,8 +105,10 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
+export function arrayTrimmer(array) {
   //your code here
+  array = array.slice(1,-1);
+  return array
 }
 
 /******************************************************************************
@@ -123,9 +130,10 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
+export const cleanAndFun = (string) => {
   //your code here
-};
+return string.replace("hard", "fun").trim();
+}
 
 /******************************************************************************
 6.
@@ -147,8 +155,16 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
+export function marvelEditor(array) {
   //your code here
+  array.slice(1)
+  let index = array.indexOf("Doctor Strange")
+  if (index !== -1 && index < array.length){
+    array[index] = "skrull"
+  
+  }
+  return array.toString();
+
 }
 
 /******************************************************************************
