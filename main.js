@@ -157,13 +157,9 @@ Use array methods to do the following:
 
 export function marvelEditor(array) {
   //your code here
-  array.slice(1)
-  let index = array.indexOf("Doctor Strange")
-  if (index !== -1 && index < array.length){
-    array[index] = "skrull"
-  
-  }
-  return array.toString();
+array.shift()
+array.splice(0, 3, "Captain America", "Skrull");
+return array.join("💪");
 
 }
 
